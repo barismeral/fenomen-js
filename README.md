@@ -27,7 +27,7 @@ ve gelen data ile istenilen bilgilere ulaşılır.
 
 	var radyo = new Fenomen();
 			
-			radyo.get(radyo.FENOMEN_TURK, function(data){
+			radyo.get(radyo.channels.FENOMEN_TURK, function(data){
 			
 				//işlemler
 			
