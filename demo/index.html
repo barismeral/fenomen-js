@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fenomen</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="audio" >
+
+            <audio controls id="audio" autoplay>
+                <source src="https://listen.radyofenomen.com/fenomen/256/icecast.audio" type="audio/mpeg" id="source">
+            </audio>
+
+        </div>
+
+        <div class="radios">
+
+            <img id="fenomen">
+            <img id="pop">
+            <img id="dance">
+
+        </div>
+
+    </div>
+
+
+    <script src="/fenomen.js"></script>
+    <script>
+
+        window.addEventListener('load', () => {
+
+            const f = new Fenomen();
+
+            var feno = document.querySelector('#fenomen');
+            var pop = document.querySelector('#pop');
+            var dance = document.querySelector('#dance');
+
+            var source = document.querySelector('#source');
+            var audio = document.querySelector('#audio');
+
+
+            f.get(f.channels.FENOMEN, function (obj) {
+                feno.src = obj.channel.logo;
+                feno.addEventListener('click', () => {
+
+                    source.src = obj.audio.src;
+                    audio.load();
+                    audio.play();
+
+                });
+            });
+
+            f.get(f.channels.FENOMEN_POP, function (obj) {
+                pop.src = obj.channel.logo;
+
+                pop.addEventListener('click', () => {
+
+                    source.src = obj.audio.src;
+                    audio.load();
+                    audio.play();
+
+                });
+
+            });
+
+            f.get(f.channels.FENOMEN_DANS, function (obj) {
+                dance.src = obj.channel.logo;
+
+                dance.addEventListener('click', () => {
+
+                    source.src = obj.audio.src;
+                    audio.load();
+                    audio.play();
+
+                });
+            });
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>

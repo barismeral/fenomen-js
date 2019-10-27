@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+
+}
+
+.audio {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.radios {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+img {
+
+    margin: 30px;
+    cursor: pointer;
+}
