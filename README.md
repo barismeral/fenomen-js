@@ -20,7 +20,7 @@ Kanallara erişim Fenomen objesi içerisinde ki tanımlanan sabitlerle yapılır
 	
 ```
 
-get metodunun ilk parametresi feneomen kanallarından birinin adı, ikinci parametresi ise
+get metodunun ilk parametresi fenomen kanallarından birinin adı, ikinci parametresi ise
 bir callback fonksiyonudur.
 callback fonksiyonuna javascript objesi olarak bir değer pas geçirilir.
 ve gelen data ile istenilen bilgilere ulaşılır.
