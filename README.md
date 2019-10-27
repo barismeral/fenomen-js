@@ -3,8 +3,10 @@
 
 # Tanımlama ve Kullanımı
 
-fenomen.js dosyası html dosyanıza 
+fenomen.js dosyası html dosyanıza
+```
 <script src="/fenomen.js"></script>
+```
 olarak import edilir.
 Demo dosyası demo klasörü içerisinde mevcuttur.
 
