@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Fenomen</title>
-    <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" type="text/css" href="./index.css">
 </head>
 
 <body>
@@ -33,7 +33,7 @@
     </div>
 
 
-    <script src="/fenomen.js"></script>
+    <script src="./fenomen.js"></script>
     <script>
 
         window.addEventListener('load', () => {
@@ -48,18 +48,18 @@
             var audio = document.querySelector('#audio');
 
 
-            f.get(f.channels.FENOMEN, function (obj) {
+            f.get( function (obj){
                 feno.src = obj.channel.logo;
                 feno.addEventListener('click', () => {
 
                     source.src = obj.audio.src;
                     audio.load();
                     audio.play();
-
                 });
-            });
+            },f.channels.FENOMEN,256);
 
-            f.get(f.channels.FENOMEN_POP, function (obj) {
+
+            f.get(function (obj) {
                 pop.src = obj.channel.logo;
 
                 pop.addEventListener('click', () => {
@@ -67,12 +67,13 @@
                     source.src = obj.audio.src;
                     audio.load();
                     audio.play();
-
                 });
+                
+            },f.channels.FENOMEN_RAP,128);
 
-            });
 
-            f.get(f.channels.FENOMEN_DANS, function (obj) {
+
+            f.get(function (obj) {
                 dance.src = obj.channel.logo;
 
                 dance.addEventListener('click', () => {
@@ -80,13 +81,13 @@
                     source.src = obj.audio.src;
                     audio.load();
                     audio.play();
-
                 });
-            });
+                
+            },f.channels.FENOMEN_ORIENTAL,128);
 
         });
 
-
+    
     </script>
 
 
