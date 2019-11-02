@@ -11,7 +11,7 @@ olarak import edilir.
 Demo dosyası demo klasörü içerisinde mevcuttur.
 
 Kanallara erişim Fenomen objesi içerisinde ki tanımlanan sabitlerle yapılır.
-7 Adet Radyo Fenomen Kanalı Mevcuttur.
+11 Adet Radyo Fenomen Kanalı Mevcuttur.
 İstenilen Yayın bilgilerine Fenomen fonksiyonundan obje üretilip, get metodu çağırılarak kullanılır.
 
 ```javascript
@@ -20,8 +20,13 @@ Kanallara erişim Fenomen objesi içerisinde ki tanımlanan sabitlerle yapılır
 	
 ```
 
-get metodunun ilk parametresi fenomen kanallarından birinin adı, ikinci parametresi ise
-bir callback fonksiyonudur.
+get metodunun ilk parametresi bir callback fonksiyonu, ikinci parametresi ise fenomen kanallarından birinin adı,
+üçüncü parametre ise isteğe göre ses kalite seçeneğidir.
+Tanımsız olarak değeri 128 kbps dır.
+Ses Kalitesi 64,128 ve 256 değerini alabilir.
+256 kbps kalitesi sadece FENOMEN ve FENOMEN_TURK kanallarını destekler.
+
+
 callback fonksiyonuna javascript objesi olarak bir değer pas geçirilir.
 ve gelen data ile istenilen bilgilere ulaşılır.
 
@@ -29,11 +34,11 @@ ve gelen data ile istenilen bilgilere ulaşılır.
 
 	var radyo = new Fenomen();
 			
-			radyo.get(radyo.channels.FENOMEN_TURK, function(data){
+			radyo.get(function(data){
 			
 				//işlemler
 			
-			});
+			},radyo.channels.FENOMEN_TURK, 256);
 			
 ```
 
@@ -44,6 +49,7 @@ ve gelen data ile istenilen bilgilere ulaşılır.
 	audio: {
 		src
 		type
+		quality
 	},
 
 	channel: {

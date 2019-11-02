@@ -29,6 +29,12 @@ function Fenomen() {
 
     }
 
+	/**
+	* Returns the desired radio channel as an object
+	* @param {function} callback  callback function
+	* @param {object} channel channel name
+	* @param {number} quality sound quality default=128 	
+	*/
     this.get = function (callback, channel, quality = 128) {
 
         if (quality != 64 && quality != 128 && quality != 256) {
